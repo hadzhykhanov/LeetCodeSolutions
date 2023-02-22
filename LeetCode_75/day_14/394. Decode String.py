@@ -6,13 +6,13 @@ class Solution:
             if item != "]":
                 stack.append(item)
             else:
-                curr_poped = stack.pop()
-                curr_elements = [curr_poped]
+                curr_popped = stack.pop()
+                curr_elements = [curr_popped]
                 curr_digits = []
 
                 while curr_elements[-1] != "[":
-                    curr_poped = stack.pop()
-                    curr_elements.append(curr_poped)
+                    curr_popped = stack.pop()
+                    curr_elements.append(curr_popped)
                 else:
                     curr_elements.pop()
                     while stack and stack[-1].isdigit():
