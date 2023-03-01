@@ -1,6 +1,7 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        return " ".join(list(reversed(s.split())))
+        return " ".join(reversed(s.split()))
+
 
 class Solution:
     def reverseWords(self, s: str) -> str:
@@ -24,3 +25,25 @@ class Solution:
             res.append(s[start:end])
 
         return " ".join(list(reversed(res)))
+
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        left, right = 0, len(s) - 1
+
+        res, word = [], []
+        while left <= right:
+            if s[left] == " " and word:
+                res.append("".join(word))
+                word.clear()
+            elif s[left] != " ":
+                word.append(s[left])
+
+            left += 1
+
+        if word:
+            res.append("".join(word))
+
+        res.reverse()
+
+        return " ".join(res)
