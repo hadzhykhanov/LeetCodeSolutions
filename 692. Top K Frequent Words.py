@@ -13,4 +13,3 @@ class Solution:
         heapify(memory)
 
         return [heappop(memory)[1] for _ in range(k)]
-    
